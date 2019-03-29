@@ -7,7 +7,7 @@ class Surgery {
   int     telephone
   int     numberOfPatients
   String  description
-  Time    openingTime
+  String  openingTime
     static constraints = {
     }
 }

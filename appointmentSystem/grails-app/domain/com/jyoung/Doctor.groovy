@@ -4,7 +4,7 @@ class Doctor {
   String  fullName
   String  qualification
   String  position
-  Email   doctorEmail
+  String  doctorEmail
   String  password
   String  doctorOffice
   int     doctorPhone

@@ -4,7 +4,7 @@ class Prescription {
   String  pharmacyName
   int     prescripNumber
   String  medicine
-  float   totalCost
+  double  totalCost
   Date    dateIssued
   boolean patientPaying
     static constraints = {
