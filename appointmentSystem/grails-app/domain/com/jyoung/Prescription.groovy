@@ -7,6 +7,7 @@ class Prescription {
   double  totalCost
   Date    dateIssued
   boolean patientPaying
+  static hasOne=[doctor:Doctor , patient:Patient]
     static constraints = {
       pharmacyName    nullable: false , blank: false
       prescripNumber  nullable: false , blank: false

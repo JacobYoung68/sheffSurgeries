@@ -6,6 +6,8 @@ class Receptionist {
   String  recepUsername
   String  recepPassword
   int     recepPhone
+  Surgery surgery
+  static hasOne=[surgery:Surgery]
     static constraints = {
       recepName     nullable: false , blank: false
       recepEmail    nullable: false , blank: false, email: true

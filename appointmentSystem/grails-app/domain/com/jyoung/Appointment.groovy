@@ -5,6 +5,7 @@ class Appointment {
   String  appTime
   int     appDuration
   String  roomNumber
+  static hasOne=[patient:Patient , doctor:Doctor , surgeries:Surgery]
     static constraints = {
       appDate     nullable: false , blank: false
       appTime     nullable: false , blank: false
