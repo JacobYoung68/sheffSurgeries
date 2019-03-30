@@ -5,13 +5,19 @@ class Receptionist {
   String  recepEmail
   String  recepUsername
   String  recepPassword
-  int     recepPhone
-  Surgery surgery
-    static constraints = {
-      recepName     nullable: false , blank: false
-      recepEmail    nullable: false , blank: false, email: true
-      recepUsername nullable: false , blank: false
-      recepPassword nullable: false , blank: false
-      recepPhone    nullable: false , blank: false
-    }
+  String  recepPhone
+
+  static belongsTo = [surgery: Surgery]
+
+  String toString(){
+    return recepName;
+  }
+
+  static constraints = {
+    recepName     nullable: false , blank: false
+    recepEmail    nullable: false , blank: false, email: true
+    recepUsername nullable: false , blank: false
+    recepPassword nullable: false , blank: false
+    recepPhone    nullable: false , blank: false
+  }
 }
