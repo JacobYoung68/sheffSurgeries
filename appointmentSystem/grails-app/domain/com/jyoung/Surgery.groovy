@@ -9,7 +9,7 @@ class Surgery {
   String  description
   String  openingTime
 
-  static  hasMany=[receptionist: Receptionist , nurse: Nurse , doctor: Doctor, appointment: Appointment]
+  static  hasMany=[receptionist: Receptionist , nurse: Nurse , doctor: Doctor, appointment: Appointment, patient: Patient]
 
   String toString(){
     return name;

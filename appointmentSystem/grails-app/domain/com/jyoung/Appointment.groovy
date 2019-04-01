@@ -6,11 +6,11 @@ class Appointment {
   int         appDuration
   String      roomNumber
   Patient     patient
-
-  static      belongsTo = [surgery: Surgery , doctor: Doctor]
+  Surgery     surgery
+  Doctor      doctor
 
   String toString(){
-    return (appDate + appTime);
+    return appDate;
   }
 
   static constraints = {
@@ -18,5 +18,8 @@ class Appointment {
     appTime     nullable: false , blank: false
     appDuration nullable: false , blank: false
     roomNumber  nullable: false , blank: false
+    patient     nullable: true , blank: false
+    doctor      nullable: true , blank: false
+    surgery     nullable: true , blank: false
   }
 }

@@ -6,8 +6,7 @@ class Receptionist {
   String  recepUsername
   String  recepPassword
   String  recepPhone
-
-  static belongsTo = [surgery: Surgery]
+  Surgery surgery
 
   String toString(){
     return recepName;

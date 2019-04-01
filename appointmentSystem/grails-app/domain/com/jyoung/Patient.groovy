@@ -25,5 +25,6 @@ class Patient {
     patientID         nullable: false , blank: false
     dateRegistered    nullable: false , blank: false
     patientPhone      nullable: false , blank: false
+    appointment       nullable: true  , blank: true
   }
 }

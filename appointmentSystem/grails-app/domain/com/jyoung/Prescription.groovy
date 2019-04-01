@@ -7,8 +7,8 @@ class Prescription {
   double  totalCost
   Date    dateIssued
   boolean patientPaying
-
-  static belongTo = [doctor: Doctor , patient: Patient]
+  Patient patient
+  Doctor  doctor
 
   String toString(){
     return prescripNumber;

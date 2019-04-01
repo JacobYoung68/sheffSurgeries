@@ -6,9 +6,10 @@ class Nurse {
   String  nurseEmail
   String  nurseOffice
   String  nursePhone
+  Surgery surgery
 
   static hasMany    = [doctor: Doctor]
-  static belongsTo  = [surgery: Surgery , doctor: Doctor]
+  static belongsTo  = [doctor: Doctor]
 
   String toString(){
     return nurseName;

@@ -11,17 +11,17 @@ class BootStrap {
       numberOfPatients: 410,
       description:      'Lorem ipsum.',
       openingTime:      '8am'
-    ).save()
+    ).save(failOnError:true)
 
-    def ehc = new Surgery(
-      name:             'Encliffe Health Centre',
-      address:          '2 EHC, Old Ln',
-      postcode:         'S11 2BC',
-      telephone:        '0114 458 5746',
-      numberOfPatients: 290,
-      description:      'Lorem ipsum.',
-      openingTime:      '8.30am'
-    ).save()
+    //def ehc = new Surgery(
+    //  name:             'Encliffe Health Centre',
+    //  address:          '2 EHC, Old Ln',
+    //  postcode:         'S11 2BC',
+    //  telephone:        '0114 458 5746',
+    //  numberOfPatients: 290,
+    //  description:      'Lorem ipsum.',
+    //  openingTime:      '8.30am'
+    //).save()
 
     def jSmith = new Doctor(
       fullName:      'John Smith',
@@ -33,19 +33,19 @@ class BootStrap {
       doctorPhone:   '0114 458 6548',
       bio:           'Lorem ipsum.',
       surgery:       shc
-    ).save()
+    ).save(failOnError:true)
 
-    def eDoe = new Doctor(
-      fullName:      'Emma Doe',
-      qualification: 'MBChB(Sheffield)',
-      position:      'GP, Surgeon',
-      doctorEmail:   'eDoe_Doc@health.com',
-      password:      'notsecure123',
-      doctorOffice:  '1a',
-      doctorPhone:   '0114 458 3254',
-      bio:           'Lorem ipsum.',
-      surgery:       ehc
-    ).save()
+    //def eDoe = new Doctor(
+    //  fullName:      'Emma Doe',
+    //  qualification: 'MBChB(Sheffield)',
+    //  position:      'GP, Surgeon',
+    //  doctorEmail:   'eDoe_Doc@health.com',
+    //  password:      'notsecure123',
+    //  doctorOffice:  '1a',
+    //  doctorPhone:   '0114 458 3254',
+    //  bio:           'Lorem ipsum.',
+    //  surgery:       ehc
+    //).save()
 
     def aRichards = new Nurse(
       nurseName:       'Alice Richards',
@@ -53,28 +53,61 @@ class BootStrap {
       nurseEmail:      'aRichards_Nurse@health.com',
       nurseOffice:     '2a',
       nursePhone:      '0114 458 1295',
-      surgery:         shc,
-      doctor:          jSmith
-    ).save()
+      surgery:         shc
+    ).save(failOnError:true)
 
-    def bFred = new Nurse(
-      nurseName:       'Barry Fred',
-      qualifications:  'Registered General Nurse',
-      nurseEmail:      'bFred_Nurse@health.com',
-      nurseOffice:     '4a',
-      nursePhone:      '0114 458 9548',
-      surgery:         ehc,
-      doctor:          eDoe
-    ).save()
+    //def bFred = new Nurse(
+    //  nurseName:       'Barry Fred',
+    //  qualifications:  'Registered General Nurse',
+    //  nurseEmail:      'bFred_Nurse@health.com',
+    //  nurseOffice:     '4a',
+    //  nursePhone:      '0114 458 9548',
+    //  surgery:         shc,
+    //  doctor:          jSmith
+    //).save()
 
-shc.addToDoctor(jSmith)
-shc.addToNurse(aRichards)
+    //def cEdwards = new Nurse(
+    //  nurseName:       'Craig Edwards',
+    //  qualifications:  'Registered General Nurse',
+    //  nurseEmail:      'cEdwards_Nurse@health.com',
+    //  nurseOffice:     '8b',
+    //  nursePhone:      '0114 458 1548',
+    //  surgery:         ehc,
+    //  doctor:          eDoe
+    //).save()
 
-ehc.addToDoctor(eDoe)
-ehc.addToNurse(bFred)
+    //def hRyan = new Nurse(
+    //  nurseName:       'Harriet Ryan',
+    //  qualifications:  'Registered General Nurse',
+    //  nurseEmail:      'hRyan_Nurse@health.com',
+    //  nurseOffice:     '8c',
+    //  nursePhone:      '0114 458 1547',
+    //  surgery:         ehc,
+    //  doctor:          eDoe
+    //).save()
 
-jSmith.addToNurse(aRichards)
-eDoe.addToNurse(bFred)
+    def gWilson = new Patient(
+      patientName:       'Gary Wilson',
+      patientAddress:    '13 Eastwood Rd',
+      patientResidence:  'Sheffield',
+      patientDob:        new Date('18/08/1998'),
+      patientID:         'P000001',
+      dateRegistered:    new Date('01/02/2019'),
+      patientPhone:      '07485612547'
+    ).save(failOnError:true)
+
+    def app1 = new Appointment(
+      appDate:      new Date('29/04/2019'),
+      appTime:      '5.25pm',
+      appDuration:  30,
+      roomNumber:   '23b',
+      surgery: shc,
+      doctor: jSmith,
+      patient: gWilson
+    ).save(failOnError:true)
+
+aRichards.addToDoctor(jSmith)
+gWilson.addToDoctor(jSmith)
 
   }
   def destroy = {
