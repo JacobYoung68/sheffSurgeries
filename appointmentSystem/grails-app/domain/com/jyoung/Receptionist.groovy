@@ -8,6 +8,8 @@ class Receptionist {
   String  recepPhone
   Surgery surgery
 
+static belongsTo = [Surgery]
+
   String toString(){
     return recepName;
   }

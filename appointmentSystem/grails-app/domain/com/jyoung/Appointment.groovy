@@ -6,8 +6,9 @@ class Appointment {
   int         appDuration
   String      roomNumber
   Patient     patient
-  Surgery     surgery
   Doctor      doctor
+
+  static belongsTo = [Patient , Doctor, Surgery]
 
   String toString(){
     return appDate;
@@ -18,8 +19,7 @@ class Appointment {
     appTime     nullable: false , blank: false
     appDuration nullable: false , blank: false
     roomNumber  nullable: false , blank: false
-    patient     nullable: true , blank: false
-    doctor      nullable: true , blank: false
-    surgery     nullable: true , blank: false
+    patient     nullable: true  , blank: true
+    doctor      nullable: true  , blank: true
   }
 }

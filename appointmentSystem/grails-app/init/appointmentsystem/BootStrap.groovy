@@ -53,7 +53,8 @@ class BootStrap {
       nurseEmail:      'aRichards_Nurse@health.com',
       nurseOffice:     '2a',
       nursePhone:      '0114 458 1295',
-      surgery:         shc
+      surgery:         shc,
+      doctor:          jSmith
     ).save(failOnError:true)
 
     //def bFred = new Nurse(
@@ -93,21 +94,29 @@ class BootStrap {
       patientDob:        new Date('18/08/1998'),
       patientID:         'P000001',
       dateRegistered:    new Date('01/02/2019'),
-      patientPhone:      '07485612547'
-    ).save(failOnError:true)
+      patientPhone:      '07485612547',
+      surgery:           shc,
+      doctor:            jSmith
+    ).save(failOnError: true)
 
     def app1 = new Appointment(
       appDate:      new Date('29/04/2019'),
       appTime:      '5.25pm',
       appDuration:  30,
       roomNumber:   '23b',
-      surgery: shc,
-      doctor: jSmith,
-      patient: gWilson
-    ).save(failOnError:true)
+      doctor:       jSmith,
+      patient:      gWilson
+    ).save(failOnError: true)
 
-aRichards.addToDoctor(jSmith)
-gWilson.addToDoctor(jSmith)
+//gWilson.addToSurgeries(shc)
+
+//aRichards.addToDoctors(jSmith)
+//gWilson.addToDoctors(jSmith)
+
+
+
+
+
 
   }
   def destroy = {
