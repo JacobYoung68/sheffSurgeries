@@ -7,6 +7,7 @@ class Appointment {
   String      roomNumber
   Patient     patient
   Doctor      doctor
+  Surgery     surgery
 
   static belongsTo = [Patient , Doctor, Surgery]
 
@@ -21,5 +22,6 @@ class Appointment {
     roomNumber  nullable: false , blank: false
     patient     nullable: true  , blank: true
     doctor      nullable: true  , blank: true
+    surgery     nullable: true  , blank: true
   }
 }

@@ -20,5 +20,6 @@ static belongsTo = [Surgery]
     recepUsername nullable: false , blank: false
     recepPassword nullable: false , blank: false
     recepPhone    nullable: false , blank: false
+    surgery       nullable: true  , blank: true
   }
 }
