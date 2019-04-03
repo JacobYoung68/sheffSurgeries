@@ -9,8 +9,6 @@ class Patient {
   Date        dateRegistered
   String      patientPhone
   Appointment appointment
-  Doctor      doctor
-  Surgery     surgery
 
 static hasMany = [doctors: Doctor , surgeries: Surgery , prescriptions: Prescription]
 static belongsTo = [doctors: Doctor , surgeries: Surgery]
@@ -28,7 +26,5 @@ static belongsTo = [doctors: Doctor , surgeries: Surgery]
     dateRegistered    nullable: false , blank: false
     patientPhone      nullable: false , blank: false
     appointment       nullable: true  , blank: true
-    doctor            nullable: true  , blank: true
-    surgery           nullable: true  , blank: true
   }
 }

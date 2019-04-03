@@ -7,7 +7,6 @@ class Nurse {
   String  nurseOffice
   String  nursePhone
   Surgery surgery
-  Doctor  doctor
 
 static hasMany = [doctors: Doctor]
 static belongsTo = [Doctor, Surgery]
@@ -23,6 +22,5 @@ static belongsTo = [Doctor, Surgery]
     nurseOffice     nullable: false , blank: false
     nursePhone      nullable: false , blank: false
     surgery         nullable: true  , blank: true
-    doctor          nullable: true  , blank: true
   }
 }

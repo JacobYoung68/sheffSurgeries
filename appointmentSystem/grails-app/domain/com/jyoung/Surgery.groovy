@@ -8,7 +8,6 @@ class Surgery {
   int     numberOfPatients
   String  description
   String  openingTime
-  Patient patient
 
 static hasMany = [nurses: Nurse , doctors: Doctor, receptionists: Receptionist, appointments: Appointment, patients: Patient]
 
@@ -24,6 +23,5 @@ static hasMany = [nurses: Nurse , doctors: Doctor, receptionists: Receptionist, 
     numberOfPatients  nullable: false , blank: false
     description       nullable: false , blank: false, widget: 'textarea'
     openingTime       nullable: false , blank: false
-    patient           nullable: true  , blank: true
   }
 }

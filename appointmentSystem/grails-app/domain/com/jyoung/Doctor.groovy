@@ -10,8 +10,6 @@ class Doctor {
   String  doctorPhone
   String  bio
   Surgery surgery
-  Patient patient
-  Nurse   nurse
 
 static hasMany = [prescriptions: Prescription , appointments: Appointment , patients: Patient , nurses: Nurse]
 static belongsTo = [Surgery]
@@ -29,8 +27,6 @@ static belongsTo = [Surgery]
     doctorOffice    nullable: false , blank: false
     doctorPhone     nullable: false , blank: false
     bio             nullable: false , blank: false , widget: 'textarea'
-    nurse           nullable: true , blank: true
-    patient         nullable: true , blank: true
     surgery         nullable: true , blank: true
   }
 }
