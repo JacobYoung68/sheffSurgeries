@@ -8,8 +8,9 @@
 <div id="content" role="main">
     <section class="row colset-2-its">
         <h1>Sheffield Surgeries</h1>
-
-
+            <div class="row">
+              <asset:image src="Hospital.jpg" style="width:1000px;height:400px;"/>
+            </div>
         <div id="controllers" role="navigation">
             <h2>Available Controllers:</h2>
             <ul>
